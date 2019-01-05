@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CatalogUiUx</string>
+    <string name="change_language_setting">Change Language Setting</string>
+    <string name="search">Search</string>
+    <string name="btn_search">Search</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="upcoming">Upcoming</string>
+</resources>
