@@ -150,4 +150,10 @@ public class MainDetail extends AppCompatActivity implements View.OnClickListene
         finish();
         return true;
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        finish();
+    }
 }
