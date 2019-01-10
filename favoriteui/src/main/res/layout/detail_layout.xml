@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:elevation="0dp"
+            android:src="@drawable/ic_launcher_background"
+            android:id="@+id/photo_detail"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/photo_detail"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Shaun the Sheep The Movie"
+            android:id="@+id/title_detail"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Ipsum lorem dolor sit amet ........................"
+            android:layout_below="@+id/title_detail"
+            android:textSize="15sp"
+            android:id="@+id/overview_detail"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/release_detail"
+            android:layout_below="@+id/overview_detail"
+            android:layout_marginTop="8dp"
+            android:textStyle="italic"
+            android:textSize="15sp"
+            tools:text="Wednesday, 32 November 2018"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rating : "
+            android:layout_below="@+id/release_detail"
+            android:id="@+id/label_rating"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star"
+            android:layout_below="@+id/release_detail"
+            android:layout_toRightOf="@+id/label_rating"
+            android:background="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/label_rating"
+            tools:text="9.0"
+            android:layout_below="@+id/release_detail"
+            android:layout_marginLeft="30dp"
+            android:textSize="17sp"
+            android:id="@+id/rating_detail"/>
+    </RelativeLayout>
+
+</ScrollView>

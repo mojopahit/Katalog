@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CatalogUiUx</string>
+    <string name="change_language_setting">Ganti Pengaturan Bahasa</string>
+    <string name="search">Cari</string>
+    <string name="btn_search">Cari</string>
+    <string name="now_playing">Dimainkan</string>
+    <string name="upcoming">Mendatang</string>
+    <string name="favorite">Favorite</string>
+    <string name="favtrue">Favorite</string>
+    <string name="favfalse">Not Favorite</string>
+    <string name="title">Movie Favorite</string>
+</resources>
