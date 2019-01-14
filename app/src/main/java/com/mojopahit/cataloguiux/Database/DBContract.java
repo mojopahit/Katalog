@@ -10,7 +10,7 @@ public class DBContract {
 
     public static class MovieColumns implements BaseColumns {
         public static final String TBLMOVIE = "tblmovie";
-        public static String ID_MOVIE = "_id";
+        //        public static String ID_MOVIE = "_id";
         public static String TITLE_MOVIE = "title";
         public static String OVERVIEW_MOVIE = "overview";
         public static String RELEASE_MOVIE = "release";

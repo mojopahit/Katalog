@@ -18,7 +18,7 @@ public class DBHelper extends SQLiteOpenHelper {
             " %s TEXT NOT NULL," +
             " %s TEXT NOT NULL)",
             DBContract.MovieColumns.TBLMOVIE,
-            DBContract.MovieColumns.ID_MOVIE,
+            DBContract.MovieColumns._ID,
             DBContract.MovieColumns.TITLE_MOVIE,
             DBContract.MovieColumns.OVERVIEW_MOVIE,
             DBContract.MovieColumns.RELEASE_MOVIE,

@@ -1,6 +1,5 @@
 package com.mojopahit.cataloguiux.Fragment;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,22 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.mojopahit.cataloguiux.Adapter.AdapterUpcoming;
 import com.mojopahit.cataloguiux.BuildConfig;
 import com.mojopahit.cataloguiux.Model.MainModel;
 import com.mojopahit.cataloguiux.R;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -52,4 +39,19 @@ public class FragmentUpcoming extends Fragment {
         return view;
     }
 
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putParcelableArrayList("upcoming", new ArrayList<>(listData));
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if (savedInstanceState != null) {
+            ArrayList<MainModel> upcoming = savedInstanceState.getParcelableArrayList("upcoming");
+            recyclerView.setAdapter(new AdapterUpcoming(upcoming));
+        }
+    }
 }

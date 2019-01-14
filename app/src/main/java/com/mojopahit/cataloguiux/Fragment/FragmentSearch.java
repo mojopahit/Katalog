@@ -141,4 +141,19 @@ public class FragmentSearch extends Fragment implements View.OnClickListener {
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         requestQueue.add(stringRequest);
     }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelableArrayList("search", new ArrayList<>(listData));
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if (savedInstanceState != null) {
+            ArrayList<MainModel> search = savedInstanceState.getParcelableArrayList("search");
+            recyclerView.setAdapter(new AdapterSearch(search));
+        }
+    }
 }

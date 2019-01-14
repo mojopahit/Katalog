@@ -5,4 +5,24 @@
     <string name="btn_search">Search</string>
     <string name="now_playing">Now Playing</string>
     <string name="upcoming">Upcoming</string>
+    <string name="favorite">Favorite</string>
+    <string name="favtrue">Favorite</string>
+    <string name="favfalse">Not Favorite</string>
+    <string name="appwidget_text">Favorite Movie</string>
+    <string name="add_widget">Add widget</string>
+    <string name="empty_text">Empty</string>
+    <string name="reminder_daily">Daily Reminder</string>
+    <string name="reminder_today">Today Reminder</string>
+    <string name="reminder">Setting Reminder</string>
+    <string name="setting">Page Setting</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="save_setting">Saving Changed</string>
+    <string name="daily_reminder">Catalog movie is missing you</string>
+    <string name="message_notif">has been release today</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="dialog">Want to reload data ?</string>
+    <string name="dialog_title">Confirm</string>
+    <string name="confirm">Ingin Reload Halaman ?</string>
 </resources>

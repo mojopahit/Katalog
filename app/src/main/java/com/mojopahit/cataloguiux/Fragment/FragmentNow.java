@@ -3,6 +3,7 @@ package com.mojopahit.cataloguiux.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -54,5 +55,21 @@ public class FragmentNow extends Fragment {
 
         loadData(url, listData, recyclerView, getActivity(), fragment);
         return view;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putParcelableArrayList("now", new ArrayList<>(listData));
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if (savedInstanceState != null) {
+            ArrayList<MainModel> now = savedInstanceState.getParcelableArrayList("now");
+            recyclerView.setAdapter(new AdapterNow(now));
+        }
     }
 }

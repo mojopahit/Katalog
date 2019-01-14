@@ -26,26 +26,15 @@ public class FragmentFav extends Fragment {
     private View view;
     RecyclerView recyclerView;
 
-    private ArrayList<MainModel> list = new ArrayList<>();;
+    private ArrayList<MainModel> list;
     private FavHelper favHelper;
     private AdapterFavorite adapterFavorite;
 
-
-    @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.favorite_fragment, container, false);
 
         recyclerView = view.findViewById(R.id.recycler_fav);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        adapterFavorite = new AdapterFavorite(getActivity());
-
-        favHelper = new FavHelper(getActivity());
-        favHelper.open();
-
-        new LoadFavAsync().execute();
-        recyclerView.setAdapter(adapterFavorite);
-
         return view;
     }
 
@@ -60,7 +49,6 @@ public class FragmentFav extends Fragment {
 
         @Override
         protected ArrayList<MainModel> doInBackground(Void... voids) {
-            Log.i("FragmentFav", "FragmentFav : "+favHelper.query());
             return favHelper.query();
         }
 
@@ -69,28 +57,41 @@ public class FragmentFav extends Fragment {
             super.onPostExecute(mainModels);
 
             list.addAll(mainModels);
-            adapterFavorite.setListFav(list);
             adapterFavorite.notifyDataSetChanged();
+            adapterFavorite.setListFav(list);
 
             if (list.size() == 0){
                 Toast.makeText(getActivity(), "Nothing to display", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getActivity(), "Length : " + list.size(), Toast.LENGTH_SHORT);
             }
         }
     }
 
     @Override
     public void onResume() {
-        list.clear();
+        favHelper = new FavHelper(getActivity());
+        favHelper.open();
 
-        super.onResume();
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setHasFixedSize(true);
+
+        list = new ArrayList<>();
+
+        adapterFavorite = new AdapterFavorite(getActivity());
+        recyclerView.setAdapter(adapterFavorite);
+
         new LoadFavAsync().execute();
+        super.onResume();
     }
 
     @Override
     public void onDestroy() {
+        super.onDestroy();
         if (favHelper != null){
             favHelper.close();
         }
-        super.onDestroy();
     }
+
+
 }

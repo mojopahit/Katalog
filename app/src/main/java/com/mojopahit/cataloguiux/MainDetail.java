@@ -22,8 +22,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
+import static android.provider.BaseColumns._ID;
 import static com.mojopahit.cataloguiux.Database.DBContract.MovieColumns.CONTENT_URI;
-import static com.mojopahit.cataloguiux.Database.DBContract.MovieColumns.ID_MOVIE;
 import static com.mojopahit.cataloguiux.Database.DBContract.MovieColumns.OVERVIEW_MOVIE;
 import static com.mojopahit.cataloguiux.Database.DBContract.MovieColumns.POSTER_PATH_MOVIE;
 import static com.mojopahit.cataloguiux.Database.DBContract.MovieColumns.RELEASE_MOVIE;
@@ -87,7 +87,6 @@ public class MainDetail extends AppCompatActivity implements View.OnClickListene
         MainModel mm = getIntent().getParcelableExtra("movie");
 
         Cursor cursor = favHelper.queryByIdProvider(String.valueOf(mm.getId()));
-        Log.i("Info cursor bos","Cek "+Uri.parse(CONTENT_URI+"/"+mm.getId())+", "+cursor);
         if (cursor != null) {
             if (cursor.moveToFirst()) isFavorite = true;
             Log.i("Cursor", cursor+"");
@@ -108,7 +107,7 @@ public class MainDetail extends AppCompatActivity implements View.OnClickListene
         if (!isFavorite){
             ContentValues cv = new ContentValues();
 
-            cv.put(ID_MOVIE, mm.getId());
+            cv.put(_ID, mm.getId());
             cv.put(TITLE_MOVIE, mm.getJudul());
             cv.put(OVERVIEW_MOVIE, mm.getDeskripsi());
             cv.put(RELEASE_MOVIE, mm.getRilis());

@@ -29,10 +29,6 @@ public class AdapterFavorite extends RecyclerView.Adapter<AdapterFavorite.VHolde
         this.activity = activity;
     }
 
-    public ArrayList<MainModel> getListFav() {
-        return listFav;
-    }
-
     public void setListFav(ArrayList<MainModel> listFav) {
         this.listFav = listFav;
     }

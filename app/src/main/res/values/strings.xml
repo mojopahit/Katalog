@@ -5,7 +5,24 @@
     <string name="btn_search">Cari</string>
     <string name="now_playing">Dimainkan</string>
     <string name="upcoming">Mendatang</string>
-    <string name="favorite">Favorite</string>
-    <string name="favtrue">Favorite</string>
-    <string name="favfalse">Not Favorite</string>
+    <string name="favorite">Favorit</string>
+    <string name="favtrue">Favorit</string>
+    <string name="favfalse">Tidak Favorit</string>
+    <string name="appwidget_text">Film Favorit</string>
+    <string name="add_widget">Tambah Widget</string>
+    <string name="empty_text">Kosong</string>
+    <string name="reminder_daily">Pengingat Harian</string>
+    <string name="reminder_today">Pengingat Hari Ini</string>
+    <string name="reminder">Atur Pengingat</string>
+    <string name="setting">Halaman Pengaturan</string>
+    <string name="save">Simpan</string>
+    <string name="cancel">Batal</string>
+    <string name="save_setting">Menyimpan Pengaturan</string>
+    <string name="daily_reminder">Katalog movie merindukanmu</string>
+    <string name="message_notif">telah dirilis hari ini</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="dialog">Ingin mengulang pengambilan data ?</string>
+    <string name="dialog_title">Konfirmasi</string>
+    <string name="confirm">Ingin Reload Halaman ?</string>
 </resources>

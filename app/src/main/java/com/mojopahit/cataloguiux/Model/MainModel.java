@@ -10,6 +10,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import static android.provider.BaseColumns._ID;
+import static com.mojopahit.cataloguiux.Database.DBContract.MovieColumns.OVERVIEW_MOVIE;
+import static com.mojopahit.cataloguiux.Database.DBContract.MovieColumns.POSTER_PATH_MOVIE;
+import static com.mojopahit.cataloguiux.Database.DBContract.MovieColumns.RELEASE_MOVIE;
+import static com.mojopahit.cataloguiux.Database.DBContract.MovieColumns.TITLE_MOVIE;
+import static com.mojopahit.cataloguiux.Database.DBContract.MovieColumns.VOTE_AVERAGE_MOVIE;
 import static com.mojopahit.cataloguiux.Database.DBContract.getColumnInt;
 import static com.mojopahit.cataloguiux.Database.DBContract.getColumnString;
 
@@ -39,6 +44,15 @@ public class MainModel implements Parcelable {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    public MainModel(Cursor cursor) {
+        this.id = DBContract.getColumnInt(cursor, _ID);
+        this.judul = DBContract.getColumnString(cursor, TITLE_MOVIE);
+        this.deskripsi = DBContract.getColumnString(cursor, OVERVIEW_MOVIE);
+        this.rilis = DBContract.getColumnString(cursor, RELEASE_MOVIE);
+        this.rating = DBContract.getColumnString(cursor, VOTE_AVERAGE_MOVIE);
+        this.foto = DBContract.getColumnString(cursor, POSTER_PATH_MOVIE);
     }
 
     public int getId() {
